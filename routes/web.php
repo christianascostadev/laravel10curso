@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProdutosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +18,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/laravel10', function(){
-    return 'olá';
-});
-
-Route::get('/teste/{id}', function(){
-    return 'teste';
+Route::prefix('Produtos')->group(function (){
+    Route::get('/',[ProdutosController::class, 'index'])->name('index');
 });
