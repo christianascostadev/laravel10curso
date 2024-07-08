@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/laravel10', function(){
+    return 'olá';
+});
+
+Route::get('/teste/{id}', function(){
+    return 'teste';
+});
