@@ -23,6 +23,10 @@
             </a>
         </form>
         <div class="table-responsive mt-4">
+          @if ($findProduto->isEmpty())
+            <p>Não existe dados</p>
+          
+          
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
@@ -49,6 +53,7 @@
                 
               </tbody>
             </table> 
+            @endif
           </div>
     </div>
   </div>
