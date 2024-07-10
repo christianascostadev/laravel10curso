@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 
 use function Laravel\Prompts\search;
 
+
 class ProdutosController extends Controller
 {
-    
+    private $produto;
     public function __construct(Produto $produto)
     {
-        $this->produto = $produto;
+        $this->produto=$produto;
     }
     
 
@@ -22,5 +23,10 @@ class ProdutosController extends Controller
         $findProduto = $this->produto->getProdutosPerquisarIndex(search: $pesquisar ?? '');
 
         return view('pages.produtos.paginacao', compact('findProduto'));
+    }
+
+    public function delete(Request $request)
+    {
+        
     }
 }
