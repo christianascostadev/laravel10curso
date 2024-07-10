@@ -10,10 +10,11 @@ class ProdutosSeeder extends Seeder
 {
        public function run(): void
     {
-        Produto::create([
-            'nome'=> 'Victor Padovam',
-            'valor'=> '20.00'
-        ]
+        Produto::create(
+        [
+            'nome'=> 'Josef Padovan',
+            'valor'=> '130.00'
+        ],
         );
     }
 }
