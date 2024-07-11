@@ -1,6 +1,6 @@
 function deleteRegistroPaginacao(rotaUrl, idDoRegistro)
 {
-    if (confirm('Deseja excluir esse registro!!!!'))
+    if (confirm('Deseja excluir esse registro?'))
     {
         $.ajax({
             url: rotaUrl,
@@ -30,3 +30,5 @@ function deleteRegistroPaginacao(rotaUrl, idDoRegistro)
     }
 
 }
+
+$('#mascara_valor').mask('#.##0,00', {reverse: true})
