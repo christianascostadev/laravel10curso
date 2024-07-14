@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\FormRequestProduto;
 use App\Models\Componentes;
 use App\Models\Produto;
+use Brian2694\Toastr\Facades\Toastr as FacadesToastr;
 use Brian2694\Toastr\Toastr;
+use Brian2694\Toastr\ToastrServiceProvider;
 use resources\views\pages\produtos\create;
 use Illuminate\Http\Request;
 
@@ -37,6 +39,7 @@ class ProdutosController extends Controller
             $componentes = new Componentes();
             $data['valor'] = $componentes->formatacaoMascaraDinheiroDecimal($data['valor']);
             Produto::create($data);
+            FacadesToastr::success('Gravado com sucesso');
             return redirect()->route('index');
             
         }
@@ -55,7 +58,7 @@ class ProdutosController extends Controller
             $data['valor'] = $componentes->formatacaoMascaraDinheiroDecimal($data['valor']);
             $buscaRegisto = Produto::find($id);
             $buscaRegisto->update($data);
-            Toastr::success('Gravado com sucesso!!!');
+            FacadesToastr::success("Atualizado!");
             return redirect()->route('index');
             
         }
@@ -70,6 +73,8 @@ class ProdutosController extends Controller
         $id =  $request->id;
         $buscaRegisto = Produto::find($id);
         $buscaRegisto->delete();
+        
         return response()->json(['sucess' => true]);
+        
     }
 }

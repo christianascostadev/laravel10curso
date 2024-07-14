@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 
 class ProdutosSeeder extends Seeder
 {
-       public function run(): void
+    public function run(): void
     {
         Produto::create(
         [
