@@ -47,7 +47,7 @@ class ClientesController extends Controller
 
     } 
 
-    public function atualizarCliente(App\Http\Controllers\FormRequestCliente $request, $id)
+    public function atualizarCliente(FormRequestCliente $request, $id)
     {    
         if ($request->method() == "PUT")
         {
@@ -58,7 +58,7 @@ class ClientesController extends Controller
             $buscaRegisto = Cliente::find($id);
             $buscaRegisto->update($data);
             FacadesToastr::success("Atualizado!");
-            return redirect()->route('index');
+            return redirect()->route('clientes.index');
             
         }
         //Mostra os dados
