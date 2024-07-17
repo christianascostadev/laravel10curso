@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Http\Controllers\ProdutosController as ControllersProdutosController;
 use Illuminate\Database\Seeder;
 use Database\Seeders\ProdutosSeeder;
+use Database\Seeders\UsuarioSeeder as SeedersUsuarioSeeder;
+use Database\Seedes\UsuarioSeeder;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -16,6 +18,7 @@ class DatabaseSeeder extends Seeder
             ProdutosSeeder::class,
             ClienteSeeder::class,
             VendasSeeder::class,
+            UsuarioSeeder::class,
         ]);
     }
 }
